@@ -1,0 +1,239 @@
+
+/* =========================================
+   ESCENA 3: MÁS ALLÁ DE LO QUE TODOS VEN
+========================================= */
+
+.laura-scene,
+.questions-scene,
+.farewell-scene {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+  padding: clamp(26px, 5vw, 48px);
+  border: 1px solid rgb(211 174 158 / 50%);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgb(255 231 225 / 60%),
+      transparent 38%
+    ),
+    linear-gradient(145deg, #fffdf8, #fff6ef);
+  box-shadow: 0 18px 55px rgb(111 76 72 / 10%);
+  color: #73585a;
+  animation: scene3-fade-in 900ms ease both;
+}
+
+.laura-scene__title,
+.questions-scene__title,
+.farewell-scene__title {
+  margin: 0;
+  color: #9b6b70;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 4.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.laura-scene__ornament {
+  margin: 24px 0 32px;
+  color: #c89a92;
+  font-size: 1.35rem;
+  letter-spacing: 0.5em;
+  text-align: center;
+}
+
+.laura-scene__story,
+.farewell-scene__story {
+  max-width: 610px;
+  margin: 0 auto;
+}
+
+.laura-scene__story p,
+.farewell-scene__story p {
+  margin: 0 0 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.03rem, 2.3vw, 1.16rem);
+  font-weight: 400;
+  line-height: 1.95;
+  text-align: left;
+}
+
+.laura-scene__story .laura-scene__emphasis {
+  margin: 32px 0;
+  color: #a66f77;
+  font-size: clamp(1.15rem, 2.8vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.85;
+  text-align: center;
+}
+
+.laura-scene__story .laura-scene__closing {
+  margin-top: 30px;
+  color: #a66f77;
+  font-size: clamp(1.2rem, 2.8vw, 1.45rem);
+  font-style: italic;
+  text-align: center;
+}
+
+/* =========================================
+   ESCENA 4: PREGUNTAS PARA COMPARTIR
+========================================= */
+
+.questions-scene__intro {
+  max-width: 600px;
+  margin: 24px auto 30px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  text-align: center;
+}
+
+.questions-scene__list {
+  display: grid;
+  gap: 16px;
+}
+
+.question-card {
+  position: relative;
+  padding: 22px 24px 22px 62px;
+  border: 1px solid rgb(211 174 158 / 45%);
+  border-radius: 16px;
+  background: rgb(255 255 255 / 60%);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+  background: #fffdf9;
+  box-shadow: 0 8px 20px rgb(111 76 72 / 8%);
+}
+
+.question-card__number {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: #c18d8d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.question-card p {
+  margin: 0;
+  color: #795c64;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.questions-scene__note {
+  max-width: 580px;
+  margin: 28px auto 0;
+  color: #9b7475;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* =========================================
+   ESCENA FINAL: DESPEDIDA
+========================================= */
+
+.farewell-scene__title {
+  margin-bottom: 34px;
+}
+
+.farewell-scene__story .farewell-scene__emphasis {
+  margin: 34px 0 8px;
+  color: #a66f77;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.envelope-page__footer {
+  margin: 34px auto 0;
+  padding: 0 16px;
+  color: #a78380;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes scene3-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .laura-scene,
+  .questions-scene,
+  .farewell-scene {
+    width: calc(100% - 24px);
+    padding: 28px 21px;
+    border-radius: 18px;
+  }
+
+  .laura-scene__ornament {
+    margin: 20px 0 26px;
+  }
+
+  .laura-scene__story p,
+  .farewell-scene__story p {
+    line-height: 1.85;
+  }
+
+  .question-card {
+    padding: 20px 18px 20px 50px;
+  }
+
+  .question-card__number {
+    top: 20px;
+    left: 17px;
+  }
+
+  .questions-scene__intro {
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laura-scene,
+  .questions-scene,
+  .farewell-scene {
+    animation: none;
+  }
+
+  .question-card {
+    transition: none;
+  }
+}

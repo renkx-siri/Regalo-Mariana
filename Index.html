@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFF7EA">
+  <title>Un día especial para Laura</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="scene2.css">
+  <link rel="stylesheet" href="scene3.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="envelope-page" id="main-page">
+
+    <span class="envelope-page__decoration envelope-page__decoration--one" aria-hidden="true">✧</span>
+    <span class="envelope-page__decoration envelope-page__decoration--two" aria-hidden="true">♡</span>
+
+    <!-- ESCENA 1: SOBRE INICIAL -->
+    <section class="envelope-card" aria-labelledby="envelope-title">
+
+      <p class="envelope-card__eyebrow">UN DETALLE PARA TI</p>
+
+      <h1 class="envelope-card__title" id="envelope-title">
+        A veces, aquello que conocemos de memoria…
+      </h1>
+
+      <p class="envelope-card__intro">
+        puede sorprendernos de una manera inesperada.
+      </p>
+
+      <button
+        class="envelope"
+        id="envelope-button"
+        type="button"
+        aria-label="Abrir sobre"
+        aria-expanded="false"
+        aria-controls="envelope-message"
+      >
+        <span class="envelope__back"></span>
+
+        <span class="envelope__letter">
+          <span class="envelope__letter-text">Para Laura</span>
+          <span class="envelope__letter-heart" aria-hidden="true">♡</span>
+        </span>
+
+        <span class="envelope__front"></span>
+        <span class="envelope__flap"></span>
+        <span class="envelope__seal" aria-hidden="true">♡</span>
+      </button>
+
+      <p class="envelope-card__hint" id="envelope-hint">
+        Hay algo esperando ser descubierto…
+      </p>
+
+      <p class="envelope-card__instruction">
+        Toca la carta para abrirla ♡
+      </p>
+
+      <div class="envelope-message" id="envelope-message" hidden>
+        <p class="envelope-message__text">
+          Incluso en aquello que lleva años formando parte de nuestras vidas,
+          siempre puede aparecer algo capaz de sentirse como la primera vez.
+        </p>
+
+        <p class="envelope-message__signature">
+          Y hoy, Laura, hay algo especial para ti.
+        </p>
+
+        <button
+          class="envelope-message__continue"
+          id="continue-button"
+          type="button"
+        >
+          Continuar
+        </button>
+      </div>
+    </section>
+
+    <!-- TRANSICIÓN -->
+    <section class="story-transition" id="story-transition" hidden>
+      <p>
+        Entre tantas cosas que merecen celebrarse,
+        hoy hay una que merece toda nuestra atención…
+      </p>
+
+      <button
+        class="story-transition__continue"
+        id="transition-continue"
+        type="button"
+      >
+        Descubrir
+      </button>
+    </section>
+
+    <!-- ESCENA 2: CUMPLEAÑOS -->
+    <section
+      class="birthday-scene"
+      id="birthday-scene"
+      aria-labelledby="birthday-title"
+      hidden
+    >
+      <h2 class="birthday-scene__title" id="birthday-title" tabindex="-1">
+        HOY ES TU DÍA, LAURA
+      </h2>
+
+      <div class="birthday-scene__ornament" aria-hidden="true">
+        <span>✧</span>
+        <span>♡</span>
+        <span>✧</span>
+      </div>
+
+      <div class="birthday-scene__story">
+        <p>
+          Hay algo muy bonito en los cumpleaños: por un día, parece que hasta
+          las cosas más pequeñas tienen un motivo para convertirse en celebración.
+        </p>
+
+        <p>
+          Y hoy, Laura, la festejada eres tú.
+        </p>
+
+        <p>
+          Hoy te toca recibir las felicitaciones, disfrutar de los detalles
+          y dejarte sorprender por lo que este día tenga preparado para ti.
+        </p>
+
+        <p>
+          Ojalá que entre todas las cosas que sucedan hoy haya alguna que te
+          haga reír de esas veces en las que cuesta trabajo dejar de hacerlo;
+          algún momento que te tome por sorpresa o una conversación que se
+          alargue tanto que, por un rato, te olvides hasta de mirar el reloj.
+        </p>
+
+        <p>
+          Porque un cumpleaños también se disfruta así: con las ocurrencias
+          que aparecen de la nada, las risas que nadie planeó y esos ratitos
+          que terminan siendo mucho más bonitos de lo que imaginábamos.
+        </p>
+
+        <p>
+          No hace falta que todo salga perfecto ni que ocurra algo extraordinario
+          para que sea un día bonito. A veces, basta con disfrutar lo que va
+          llegando, dejarse consentir un poquito y encontrar alegría en los
+          pequeños detalles.
+        </p>
+
+        <p>
+          Así que hoy, Laura, esperamos que disfrutes mucho tu día, que te
+          diviertas y que te lleves más de un motivo para guardar un bonito
+          recuerdo de él.
+        </p>
+      </div>
+
+      <div class="birthday-scene__birthday">
+        <span class="birthday-scene__birthday-decoration" aria-hidden="true">✧ ♡ ✧</span>
+        <p>¡Feliz cumpleaños, Laura!</p>
+        <span class="birthday-scene__birthday-decoration" aria-hidden="true">♡</span>
+      </div>
+
+      <button
+        class="scene-continue"
+        id="scene2-continue"
+        type="button"
+      >
+        Continuar
+        <span aria-hidden="true">↓</span>
+      </button>
+    </section>
+
+    <!-- ESCENA 3: MÁS ALLÁ DE LO QUE TODOS VEN -->
+    <section
+      class="laura-scene"
+      id="laura-scene"
+      aria-labelledby="laura-title"
+      hidden
+    >
+      <h2 class="laura-scene__title" id="laura-title" tabindex="-1">
+        MÁS ALLÁ DE LO QUE TODOS VEN
+      </h2>
+
+      <div class="laura-scene__ornament" aria-hidden="true">✧ ♡ ✧</div>
+
+      <div class="laura-scene__story">
+        <p>
+          Toda vida está hecha de muchas versiones de nosotros mismos.
+        </p>
+
+        <p>
+          Está la persona que fuimos cuando comenzábamos a descubrir el mundo,
+          la que soñaba con lo que algún día podría llegar a ser y la que,
+          poco a poco, fue encontrando su propio camino.
+        </p>
+
+        <p>
+          Laura, tú también has recorrido ese camino. Has perseguido sueños,
+          tomado decisiones, conocido lugares y vivido experiencias que hoy
+          forman parte de quien eres.
+        </p>
+
+        <p>
+          Y si por un instante pudieras mirar hacia atrás, quizá encontrarías
+          a aquella Laura de otros tiempos: sus ilusiones, sus ocurrencias,
+          las aventuras que vivió y las cosas que todavía pueden dibujarle
+          una sonrisa.
+        </p>
+
+        <p>
+          Cada etapa tuvo algo distinto que ofrecerte. Y aunque algunas
+          parezcan lejanas, todas forman parte de ese recorrido que te
+          ha traído hasta aquí.
+        </p>
+
+        <p class="laura-scene__emphasis">
+          Porque celebrar tu cumpleaños también es reconocer todo lo que
+          has vivido, a la mujer que has sido y a la que eres hoy.
+        </p>
+
+        <p>
+          Y aunque el tiempo nos permita conocer cada vez mejor a las personas
+          que queremos, siempre puede sorprendernos con una nueva forma de
+          mirarlas, algo que no habíamos compartido o una faceta que todavía
+          no conocíamos.
+        </p>
+
+        <p>
+          Porque a veces, para conocer un poquito más a alguien,
+          no hace falta ir muy lejos.
+        </p>
+
+        <p class="laura-scene__closing">
+          Basta con hacer la pregunta… y escuchar la respuesta.
+        </p>
+      </div>
+
+      <button
+        class="scene-continue"
+        id="scene3-continue"
+        type="button"
+      >
+        Continuar
+        <span aria-hidden="true">↓</span>
+      </button>
+    </section>
+
+    <!-- ESCENA 4: PREGUNTAS PARA COMPARTIR -->
+    <section
+      class="questions-scene"
+      id="questions-scene"
+      aria-labelledby="questions-title"
+      hidden
+    >
+      <h2 class="questions-scene__title" id="questions-title" tabindex="-1">
+        UN RATITO PARA NOSOTRAS
+      </h2>
+
+      <p class="questions-scene__intro">
+        Ahora viene una parte diferente. No hay respuestas correctas
+        ni tienen que contestarlo todo. La idea es escucharse con calma,
+        recordar, descubrir cosas nuevas y decirse aquello que a veces
+        se queda guardado.
+      </p>
+
+      <div class="questions-scene__list">
+        <article class="question-card">
+          <span class="question-card__number">01</span>
+          <p>
+            Mamá, si pudiera conocerte cuando tenías mi edad,
+            ¿qué crees que me sorprendería más de ti?
+          </p>
+        </article>
+
+        <article class="question-card">
+          <span class="question-card__number">02</span>
+          <p>
+            ¿Qué enseñanza de mamá o de hija se ha quedado contigo
+            y te acompaña hasta hoy?
+          </p>
+        </article>
+
+        <article class="question-card">
+          <span class="question-card__number">03</span>
+          <p>
+            ¿Qué hace tu mamá que quizá ella considera algo normal,
+            pero que a ti te hace sentir profundamente querida?
+          </p>
+        </article>
+
+        <article class="question-card">
+          <span class="question-card__number">04</span>
+          <p>
+            Si pudieras asegurarte de que tu mamá nunca olvidara
+            una sola cosa que piensas de ella, ¿qué te gustaría que fuera?
+          </p>
+        </article>
+
+        <article class="question-card">
+          <span class="question-card__number">05</span>
+          <p>
+            ¿Qué te gustaría que tu mamá pudiera ver de sí misma
+            a través de tus ojos?
+          </p>
+        </article>
+      </div>
+
+      <p class="questions-scene__note">
+        No tienen que responderlas todas ni encontrar las palabras perfectas.
+        Dejen que una respuesta las lleve a un recuerdo, que un recuerdo
+        despierte otra pregunta y que las palabras aparezcan a su propio ritmo.
+        Lo importante no es terminar la lista, sino disfrutar este ratito juntas.
+      </p>
+
+      <button
+        class="scene-continue"
+        id="scene4-continue"
+        type="button"
+      >
+        Continuar
+        <span aria-hidden="true">↓</span>
+      </button>
+    </section>
+
+    <!-- ESCENA FINAL -->
+    <section
+      class="farewell-scene"
+      id="farewell-scene"
+      aria-labelledby="farewell-title"
+      hidden
+    >
+      <h2 class="farewell-scene__title" id="farewell-title" tabindex="-1">
+        UN ÚLTIMO PENSAMIENTO
+      </h2>
+
+      <div class="farewell-scene__story">
+        <p>
+          Y ahora, por un momento, dejemos las palabras aquí.
+        </p>
+
+        <p>
+          Mamá, quizá haya cosas que tu hija no siempre encuentre la manera
+          de decirte. Y quizá haya otras que tú también guardes en el corazón,
+          no porque falte el cariño, sino porque a veces la vida nos lleva
+          tan deprisa que olvidamos detenernos a poner en palabras aquello
+          que más importa.
+        </p>
+
+        <p>
+          Por eso, hoy quisiera invitarlas a hacer algo diferente.
+        </p>
+
+        <p>
+          Regálense unos minutos. Escúchense sin prisa. Recuerden esas cosas
+          que las hacen sonreír, las pequeñas cosas que han compartido y todo
+          aquello que, con el paso de los años, ha hecho que sus vidas estén
+          entrelazadas.
+        </p>
+
+        <p>
+          Quizá haya algo que quieran decirse, algún recuerdo que les gustaría
+          compartir o simplemente ganas de disfrutar un ratito juntas.
+          No necesitan encontrar las palabras perfectas ni decir algo
+          extraordinario. Basta con hablar desde el corazón y darse la
+          oportunidad de escuchar lo que la otra tiene para compartir.
+        </p>
+
+        <p>
+          Porque hay sentimientos que cobran un significado distinto cuando
+          se expresan, abrazos que dicen más de lo que las palabras podrían
+          explicar y momentos que, sin saberlo, terminan convirtiéndose
+          en recuerdos para toda la vida.
+        </p>
+
+        <p>
+          Y hasta aquí llegan mis palabras.
+        </p>
+
+        <p class="farewell-scene__emphasis">
+          Ahora les toca a ustedes. ❤️
+        </p>
+      </div>
+    </section>
+
+    <footer class="envelope-page__footer">
+      Algunas sorpresas se disfrutan sin prisa.
+    </footer>
+  </main>
+</body>
+</html>

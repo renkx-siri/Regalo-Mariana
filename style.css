@@ -1,0 +1,315 @@
+
+/* ========================================
+   MÓDULO 1 — SOBRE INICIAL
+   Todo el diseño de esta pantalla vive aquí.
+   ======================================== */
+
+.envelope-page {
+  --paper: #FFF7EA;
+  --pink: #E9BFCB;
+  --pink-dark: #B96F88;
+  --pink-light: #F8E3E8;
+  --gold: #C5A15D;
+  --ink: #49383B;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(ellipse at 50% 35%, #FFFFFF 0%, transparent 60%),
+    var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+.envelope-page *,
+.envelope-page *::before,
+.envelope-page *::after {
+  box-sizing: border-box;
+}
+
+.envelope-card {
+  width: min(100%, 620px);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.envelope-card__eyebrow {
+  margin: 0 0 22px;
+  color: var(--pink-dark);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.envelope-card__title {
+  max-width: 570px;
+  margin: 0 auto;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.envelope-card__intro {
+  margin: 16px auto 48px;
+  font-size: clamp(17px, 2.5vw, 20px);
+  line-height: 1.6;
+}
+
+.envelope {
+  width: min(78vw, 310px);
+  aspect-ratio: 1.48;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  perspective: 900px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope:focus-visible,
+.envelope-message__continue:focus-visible {
+  outline: 3px solid var(--pink-dark);
+  outline-offset: 7px;
+  border-radius: 8px;
+}
+
+.envelope__back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 1px solid #D9A5B4;
+  border-radius: 5px;
+  background: #F1CFD8;
+  box-shadow: 0 16px 32px #69434A1A;
+}
+
+.envelope__letter {
+  position: absolute;
+  z-index: 2;
+  left: 8%;
+  right: 8%;
+  top: 7%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #E8D8BC;
+  border-radius: 3px;
+  background: #FFFCF5;
+  box-shadow: 0 3px 8px #69434A0A;
+  transition: transform 900ms cubic-bezier(.2,.75,.25,1);
+}
+
+.envelope__letter-text {
+  color: var(--pink-dark);
+  font-size: clamp(20px, 4vw, 27px);
+  font-style: italic;
+}
+
+.envelope__letter-heart {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.envelope__front {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 4px;
+  background: #E9BFCB;
+  clip-path: polygon(0 0, 50% 53%, 100% 0, 100% 100%, 0 100%);
+  border-bottom: 1px solid #D9A5B4;
+}
+
+.envelope__flap {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto;
+  height: 58%;
+  border-radius: 4px 4px 0 0;
+  background: #F4D8DF;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition:
+    transform 700ms ease,
+    z-index 0ms linear 350ms;
+}
+
+.envelope__seal {
+  position: absolute;
+  z-index: 5;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #D2AF6A;
+  border-radius: 50%;
+  background: #C5A15D;
+  color: #FFFFFF;
+  font-size: 25px;
+  box-shadow: 0 3px 8px #69434A20;
+  transition: opacity 250ms ease;
+}
+
+.envelope-card.is-open .envelope__flap {
+  z-index: 0;
+  transform: rotateX(180deg);
+}
+
+.envelope-card.is-open .envelope__letter {
+  transform: translateY(-43%);
+  transition-delay: 350ms;
+}
+
+.envelope-card.is-open .envelope__seal {
+  opacity: 0;
+}
+
+.envelope-card.is-open .envelope {
+  cursor: default;
+}
+
+.envelope-card__hint {
+  margin: 25px 0 0;
+  color: #755B61;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.envelope-message {
+  margin: 34px auto 0;
+  animation: envelope-appear 700ms ease both;
+}
+
+.envelope-message[hidden] {
+  display: none;
+}
+
+.envelope-message__text {
+  margin: 0 auto;
+  max-width: 490px;
+  font-size: clamp(19px, 3vw, 23px);
+  line-height: 1.75;
+}
+
+.envelope-message__signature {
+  margin: 20px 0;
+  color: var(--pink-dark);
+  font-size: clamp(22px, 3vw, 27px);
+  font-style: italic;
+}
+
+.envelope-message__continue {
+  margin-top: 12px;
+  padding: 15px 25px;
+  border: 1px solid var(--pink-dark);
+  border-radius: 999px;
+  background: var(--pink-dark);
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.envelope-message__continue:hover {
+  background: #9F576F;
+  transform: translateY(-2px);
+}
+
+.envelope-page__decoration {
+  position: absolute;
+  z-index: 0;
+  color: var(--gold);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.envelope-page__decoration--one {
+  top: 15%;
+  left: 12%;
+  font-size: 32px;
+}
+
+.envelope-page__decoration--two {
+  right: 13%;
+  bottom: 20%;
+  font-size: 43px;
+}
+
+.envelope-page__footer {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+  left: 15px;
+  margin: 0;
+  color: #755B61;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+@keyframes envelope-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .envelope-page {
+    padding: 32px 22px 55px;
+  }
+
+  .envelope-card__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  .envelope-page__decoration--one {
+    top: 7%;
+    left: 6%;
+  }
+
+  .envelope-page__decoration--two {
+    right: 5%;
+    bottom: 11%;
+  }
+
+  .envelope-page__footer {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope-page *,
+  .envelope-page *::before,
+  .envelope-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
